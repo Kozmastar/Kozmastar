@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORIKI'S GLAMOUR GALLERY | Hair Accessories</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Login Modal -->
+    <div class="login-modal" id="login-modal">
+        <div class="login-container">
+            <button class="login-close" id="login-close">&times;</button>
+            <h2 class="login-title">Admin Login</h2>
+            <form class="login-form" id="login-form">
+                <input type="password" class="login-input" id="admin-password" placeholder="Enter Admin Password" required>
+                <button type="submit" class="login-btn">Access Admin Panel</button>
+                <div class="login-error" id="login-error">Incorrect password. Please try again.</div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Website Content (Visible by default) -->
+    <div id="main-content">
+        <!-- Header Section -->
+        <header>
+            <div class="container">
+                <div class="logo-area">
+                    <div class="logo-container">
+                        <img id="logo-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23d6409f' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3Cpath fill='%23ff7eb9' d='M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23ffffff'/%3E%3C/svg%3E" alt="PORIKI'S GLAMOUR GALLERY Logo">
+                    </div>
+                    <h1 class="main-heading">PORIKI'S GLAMOUR GALLERY</h1>
+                    <p class="sub-heading">For All Classy Girl Staff All Hair Accessories</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Bar -->
+        <div class="container">
+            <nav>
+                <a href="#" class="active">Home</a>
+                <a href="#products">Products</a>
+                <a href="#contact">Contact</a>
+                <a href="https://tiktok.com/@Lifeofpatience7" class="social-icon" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <div class="admin-toggle" id="admin-toggle">Admin Login</div>
+            </nav>
+        </div>
+
+        <!-- Products Section -->
+        <section class="products-section" id="products">
+            <div class="container">
+                <h2 class="section-title">Our Hair Accessories</h2>
+                <div class="products-grid" id="public-products-grid">
+                    <!-- Products will be added here via admin panel -->
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" class="product-img" alt="Elegant Hair Clip">
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1595425977377-6aaf06a0d05f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80" class="product-img" alt="Sparkly Hair Band">
+                    </div>
+                    <div class="product-item">
+                        <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" class="product-img" alt="Floral Hair Pin">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-container">
+                    <div class="contact-methods">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h3 class="contact-title">Call Us</h3>
+                            <p class="contact-info">
+                                0709 446 689<br>
+                                0744 041 928
+                            </p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3 class="contact-title">WhatsApp</h3>
+                            <p class="contact-info">
+                                <a href="https://wa.link/hmytxo" target="_blank">Chat on WhatsApp</a>
+                            </p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-tiktok"></i>
+                            </div>
+                            <h3 class="contact-title">TikTok</h3>
+                            <p class="contact-info">
+                                <a href="https://tiktok.com/@Lifeofpatience7" target="_blank">@Lifeofpatience7</a>
+                            </p>
+                        </div>
+                        
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3 class="contact-title">Email</h3>
+                            <p class="contact-info">
+                                <a href="mailto:natunkundapatience278@gmail.com">natunkundapatience278@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">PORIKI'S GLAMOUR GALLERY</div>
+                    <p>For All Classy Girl Staff All Hair Accessories</p>
+                    <p>&copy; 2023 All Rights Reserved</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Admin Section (Hidden by default) -->
+    <section class="admin-section" id="admin-section">
+        <div class="container admin-container">
+            <div class="admin-header">
+                <h2 class="admin-title">Admin Panel</h2>
+                <button class="admin-logout" id="admin-logout">Logout</button>
+            </div>
+            
+            <div class="admin-columns">
+                <div class="admin-column">
+                    <h3 class="admin-subtitle">Upload Logo</h3>
+                    <div class="admin-logo-area">
+                        <div class="logo-container admin-logo" id="admin-logo-drop">
+                            <img id="admin-logo-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23d6409f' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z'/%3E%3Cpath fill='%23ff7eb9' d='M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'/%3E%3Ccircle cx='12' cy='12' r='2' fill='%23ffffff'/%3E%3C/svg%3E" alt="PORIKI'S GLAMOUR GALLERY Logo">
+                        </div>
+                        <div class="admin-upload-instructions">
+                            <p>Drag & drop your logo image here or click to select</p>
+                            <p>Recommended size: 300×300 pixels</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-column">
+                    <h3 class="admin-subtitle">Upload Products</h3>
+                    <div class="admin-drag-drop">
+                        <div class="admin-drop-area" id="admin-drop-area">
+                            <i class="fas fa-cloud-upload-alt admin-drop-icon"></i>
+                            <h3 class="admin-drop-text">Drag & Drop Product Images Here</h3>
+                            <p class="admin-drop-subtext">Upload up to 145 images of your beautiful hair accessories</p>
+                            <button class="admin-browse-btn" id="admin-browse-btn">Browse Files</button>
+                            <input type="file" id="admin-file-input" class="admin-file-input" accept="image/*" multiple>
+                        </div>
+                        
+                        <div class="admin-upload-instructions">
+                            <h4>Upload Instructions:</h4>
+                            <ul>
+                                <li>Click "Browse Files" or drag images directly</li>
+                                <li>Select multiple images at once (JPG, PNG)</li>
+                                <li>Images will be automatically resized</li>
+                                <li>Uploaded images will appear in the public gallery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

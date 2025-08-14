@@ -1,0 +1,646 @@
+/* styles.css */
+/* CSS Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --primary: #ff7eb9;
+    --secondary: #d6409f;
+    --dark: #4a154b;
+    --light: #fff0f5;
+    --accent: #ffd700;
+    --admin-bg: #2c0b3a;
+}
+
+body {
+    background: linear-gradient(135deg, #fdf6fa, #fceaf3);
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #8a2be2, #5d0e8b);
+    padding: 15px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--accent);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo Area */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9ecb, #e55fb0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 126, 185, 0.6);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border: 3px solid white;
+}
+
+.logo-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 126, 185, 0.9);
+}
+
+.logo-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, transparent, rgba(255,255,255,0.3));
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 15px rgba(255, 126, 185, 0.6); }
+    100% { box-shadow: 0 0 30px rgba(255, 126, 185, 0.9), 0 0 40px rgba(255, 126, 185, 0.7); }
+}
+
+#logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Heading Styles */
+.main-heading {
+    font-style: italic;
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.sub-heading {
+    text-align: center;
+    color: var(--light);
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--dark);
+    padding: 12px 0;
+    border-radius: 50px;
+    margin: 15px auto;
+    max-width: 800px;
+    position: relative;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25a3e0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #000;
+    transform: scale(1.1);
+}
+
+.admin-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent);
+    color: var(--dark);
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.admin-toggle:hover {
+    background: #ffc800;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Products Section */
+.products-section {
+    padding: 50px 0;
+    background-color: var(--light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--dark);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+/* Products Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 3/4;
+    background: linear-gradient(45deg, #f8e1f0, #f0c6e0);
+}
+
+.product-item:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+}
+
+.contact-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.contact-card {
+    background: linear-gradient(135deg, var(--light), #fff5f9);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.contact-title {
+    font-size: 1.3rem;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.contact-info {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.contact-info a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    font-size: 1rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* Admin Section */
+.admin-section {
+    display: none;
+    background: var(--admin-bg);
+    padding: 40px 0;
+    min-height: 100vh;
+}
+
+.admin-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.admin-title {
+    color: white;
+    font-size: 2rem;
+}
+
+.admin-logout {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.admin-logout:hover {
+    background: #ff69a6;
+    transform: translateY(-3px);
+}
+
+.admin-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.admin-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.admin-subtitle {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.admin-logo-area {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+}
+
+.admin-logo {
+    margin: 0 auto 20px;
+    width: 180px;
+    height: 180px;
+    cursor: pointer;
+}
+
+/* Admin Drag & Drop Area */
+.admin-drag-drop {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+}
+
+.admin-drop-area {
+    border: 2px dashed var(--primary);
+    border-radius: 15px;
+    padding: 30px 20px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 126, 185, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.admin-drop-area.active {
+    background-color: rgba(255, 126, 185, 0.2);
+    border-color: #ffa3ce;
+}
+
+.admin-drop-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.admin-drop-text {
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.admin-drop-subtext {
+    color: #ddd;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.admin-file-input {
+    display: none;
+}
+
+.admin-upload-instructions {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    text-align: left;
+    color: white;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.admin-upload-instructions h4 {
+    color: var(--accent);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.admin-upload-instructions ul {
+    padding-left: 20px;
+}
+
+.admin-upload-instructions li {
+    margin-bottom: 8px;
+    color: #ddd;
+}
+
+.admin-browse-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 15px rgba(214, 64, 159, 0.3);
+    margin-top: 10px;
+}
+
+.admin-browse-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(214, 64, 159, 0.4);
+}
+
+/* Login Modal */
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+}
+
+.login-title {
+    color: var(--dark);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-input {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.login-input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 126, 185, 0.3);
+}
+
+.login-btn {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(214, 64, 159, 0.4);
+}
+
+.login-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #777;
+}
+
+.login-error {
+    color: #ff4d4d;
+    margin-top: 10px;
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 2rem;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    
+    nav a {
+        padding: 8px 15px;
+        margin: 5px;
+        font-size: 0.9rem;
+    }
+    
+    .admin-toggle {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        margin: 10px auto;
+        width: max-content;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .contact-container {
+        padding: 25px;
+    }
+    
+    .admin-drop-area {
+        padding: 20px 15px;
+    }
+    
+    .admin-columns {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 1.7rem;
+    }
+    
+    .logo-container {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-drag-drop {
+        padding: 15px;
+    }
+    
+    .admin-drop-text {
+        font-size: 1.1rem;
+    }
+}
